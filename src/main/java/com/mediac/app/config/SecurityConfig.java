@@ -1,4 +1,4 @@
-package com.mediac.app;
+package com.mediac.app.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
