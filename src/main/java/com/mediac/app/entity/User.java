@@ -52,11 +52,18 @@ public class User implements Serializable {
 
     }
 
-    public User(String userEmail, String userPassword, String userNickname, Date userDate, List<Video> videos, List<Comment> comments) {
+    public User(String userEmail, String userPassword, String userNickname) {
         this.userEmail = userEmail;
         setUserPassword(userPassword);
         this.userNickname = userNickname;
-        this.userDate = userDate;
+        this.userDate = new Date();
+    }
+
+    public User(String userEmail, String userPassword, String userNickname, Date userDate, List<Video> videos, List<Comment> comments) {
+        this.userEmail = userEmail;
+        this.userPassword = userPassword;
+        this.userNickname = userNickname;
+        this.userDate = new Date();
         this.videos = videos;
         this.comments = comments;
     }
