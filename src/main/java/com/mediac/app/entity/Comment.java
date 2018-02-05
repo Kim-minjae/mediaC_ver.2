@@ -1,6 +1,8 @@
 package com.mediac.app.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -11,7 +13,7 @@ public class Comment {
 
     @Id
     @Column(name = "comment_id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
 	private Long commentId;
 
     @Column(name = "comment_content", length = 500)
@@ -43,9 +45,6 @@ public class Comment {
     @ManyToOne
     @JoinColumn(name="user_id")
     private User user;
-
-    @OneToOne(mappedBy = "comment", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private PercentMap percentMap;
 
     public Comment() {
     }

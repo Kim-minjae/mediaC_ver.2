@@ -1,6 +1,8 @@
 package com.mediac.app.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -13,7 +15,7 @@ public class Video {
 
     @Id
     @Column(name = "video_id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
     private Long videoId;
 
     @Column(name = "video_title", length = 50)
