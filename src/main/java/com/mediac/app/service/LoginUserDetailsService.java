@@ -2,6 +2,7 @@ package com.mediac.app.service;
 
 import com.mediac.app.domain.LoginUserDetails;
 import com.mediac.app.entity.Account;
+import com.mediac.app.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -17,7 +18,7 @@ import org.springframework.stereotype.Service;
 public class LoginUserDetailsService implements UserDetailsService
 {
     @Autowired
-    AccountService accountService;
+    UserService userService;
 
     // 필자의 경우 기존 해시 시스템이 좀 다르기 때문에
     // 이부분을 적용한다면 암호가 구형시스템이라면 바꿔주는 부분이 필요.
@@ -31,7 +32,7 @@ public class LoginUserDetailsService implements UserDetailsService
         // 위 @Autowired HttpServletRequest request;
         // request 처리
 
-        Account account = accountService.getAccount(ac);
+        User user = userService.(ac);
 
         if (account == null)
         {
